@@ -36,7 +36,15 @@ class MainActivity : AppCompatActivity() {
 
                 var NwHoras =H2-H1
                 var NwMinutos=M2-M1
-                 Toast.makeText(this,"hora1\n"+"h"+NwHoras+"m"+NwMinutos, Toast.LENGTH_LONG).show()
+
+                 if (NwMinutos>0 || NwMinutos>  59){
+                     var SumaH =NwHoras+1
+                     Toast.makeText(this,"HORA 1\n\n"+"H: "+NwHoras+"\n\n m: "+NwMinutos+"\nPago: "+SumaH*15, Toast.LENGTH_LONG).show()
+                }
+                else{
+                     Toast.makeText(this,"hora 1.1\n"+"h: "+NwHoras+"\n m: "+NwMinutos+"\nPago: "+NwHoras*15, Toast.LENGTH_LONG).show()
+                 }
+                // Toast.makeText(this,"hora1\n"+"h"+NwHoras+"m"+NwMinutos, Toast.LENGTH_LONG).show()
             }else if (H1<H2 && M1>M2){
                 var SumaM=M2+60
                 var RestaH=H2-1
@@ -44,7 +52,18 @@ class MainActivity : AppCompatActivity() {
                 var NwMinutos=SumaM-M1
                 var NwHoras=RestaH-H1
 
-                Toast.makeText(this,"hora12\n"+"h"+NwHoras+"m"+NwMinutos, Toast.LENGTH_LONG).show()
+               // Toast.makeText(this,"hora12\n"+"h"+NwHoras+"m"+NwMinutos, Toast.LENGTH_LONG).show()
+                if (NwMinutos>0 || NwMinutos>  59){
+                    var SumaH =NwHoras+1
+                    Toast.makeText(this,"HORA 1\n\n"+"H: "+NwHoras+"\n\n m: "+NwMinutos+"\nPago: "+SumaH*15, Toast.LENGTH_LONG).show()
+                }
+                else {
+                    Toast.makeText(
+                        this,
+                        "hora 1.1\n" + "h: " + NwHoras + "\n m: " + NwMinutos + "\nPago: " + NwHoras * 15,
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
 
             }else if (H1==H2){
                 if (M1<M2){
