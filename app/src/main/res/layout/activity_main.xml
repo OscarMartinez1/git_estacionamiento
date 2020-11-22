@@ -49,24 +49,34 @@
         android:id="@+id/btCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
         android:text="calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.959" />
+        app:layout_constraintVertical_bias="0.784" />
+
+    <Spinner
+        android:id="@+id/spentrada"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="176dp"
+        app:layout_constraintEnd_toStartOf="@+id/txMentrada"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txHentrada"
+        android:id="@+id/txMentrada"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="176dp"
         android:ems="10"
-        android:hint="1"
+        android:hint="2"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/txMentrada"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txHentrada"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -78,33 +88,21 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/txMsalida"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txHentrada"
         app:layout_constraintVertical_bias="0.197" />
 
     <EditText
-        android:id="@+id/txMentrada"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="124dp"
-        android:ems="10"
-        android:hint="2"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/txMsalida"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="124dp"
         android:ems="10"
         android:hint="4"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txHsalida"
         app:layout_constraintTop_toBottomOf="@+id/txMentrada"
         app:layout_constraintVertical_bias="0.197" />
 

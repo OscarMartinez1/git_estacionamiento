@@ -3,25 +3,40 @@ package com.example.estacionamiento
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
+
+    //cuando utilize el spinner, esta opcion lo guardara en texto
+    val horaentrada:String=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         //declaracion de variables
-        val txHe=findViewById<EditText>(R.id.txHentrada)
+       //val txHe=findViewById<EditText>(R.id.txHentrada)
+        val spHe: Spinner = findViewById(R.id.spentrada)
         val txMe=findViewById<EditText>(R.id.txMentrada)
         val txHs=findViewById<EditText>(R.id.txHsalida)
         val txMs=findViewById<EditText>(R.id.txMsalida)
         val btCal=findViewById<Button>(R.id.btCalcular)
 
+        ArrayAdapter.createFromResource(
+            this,
+            R.array.hentrada_spinner,
+            android.R.layout.simple_spinner_item
+        ).also { adapter ->
+            // Specify the layout to use when the list of choices appears
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+            // Apply the adapter to the spinner
+            spHe.adapter = adapter
+        }
+
+
         //boton operaciones
         btCal.setOnClickListener(View.OnClickListener {
-            var H1=txHe.text.toString().toInt()
+            var H1=horaentrada.toInt()
             var M1=txMe.text.toString().toInt()
             var H2=txHs.text.toString().toInt()
             var M2=txMs.text.toString().toInt()
@@ -83,5 +98,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        TODO("Not yet implemented")
+        val spinner: Spinner = findViewById(R.id.spentrada)
+        spinner.onItemSelectedListener = this
+        horaentrada= spinner.getItemAtPosition(position).toString()
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        TODO("Not yet implemented")
     }
 }
