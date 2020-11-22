@@ -8,15 +8,16 @@ import android.widget.*
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
 
     //cuando utilize el spinner, esta opcion lo guardara en texto
-    val horaentrada:String=""
+    lateinit var spHe: Spinner
+    var horaentrada:String = "1"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        spHe = findViewById(R.id.spentrada)
         //declaracion de variables
        //val txHe=findViewById<EditText>(R.id.txHentrada)
-        val spHe: Spinner = findViewById(R.id.spentrada)
+        //val spHe: Spinner = findViewById(R.id.spentrada)
         val txMe=findViewById<EditText>(R.id.txMentrada)
         val txHs=findViewById<EditText>(R.id.txHsalida)
         val txMs=findViewById<EditText>(R.id.txMsalida)
@@ -101,10 +102,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener  {
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        TODO("Not yet implemented")
-        val spinner: Spinner = findViewById(R.id.spentrada)
-        spinner.onItemSelectedListener = this
-        horaentrada= spinner.getItemAtPosition(position).toString()
+        spHe = findViewById(R.id.spentrada)
+        spHe.onItemSelectedListener = this
+        horaentrada = spHe.getItemAtPosition(position).toString()
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {

@@ -14,8 +14,10 @@
         android:text="ESTACIONAMIENTO"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07" />
 
@@ -27,10 +29,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533" />
+        app:layout_constraintTop_toBottomOf="@+id/txMsalida"
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/textView2"
@@ -42,68 +44,70 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.334" />
+        app:layout_constraintTop_toBottomOf="@+id/spentrada"
+        app:layout_constraintVertical_bias="0.349" />
 
     <Button
         android:id="@+id/btCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Spinner
         android:id="@+id/spentrada"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toStartOf="@+id/txMentrada"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/txMentrada"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="2"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txHentrada"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/spentrada"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/txHsalida"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="3"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txMsalida"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txHentrada"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txMsalida"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/txMsalida"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="4"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txHsalida"
-        app:layout_constraintTop_toBottomOf="@+id/txMentrada"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintEnd_toStartOf="@+id/txHsalida"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.155" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
